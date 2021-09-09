@@ -17,13 +17,13 @@ public class EmployeeService {
     @Autowired
     EmployeeRepository employeeRepository;
 
-    Long create(EmployeeDto dto) {
+    public Long create(EmployeeDto dto) {
         Employee employee = dtoToEntity(dto);
         employeeRepository.save(employee);
         return employee.getId();
     }
 
-    Employee dtoToEntity(EmployeeDto dto) {
+    public Employee dtoToEntity(EmployeeDto dto) {
         Account account = new Account(dto.getAccountId(), dto.getAccountNumber());
         Company company = Company.builder().company_id(dto.getCompanyId()).build();
         Employee employee = Employee.builder().email(dto.getEmail()).account(account).company(company).name(dto.getName()).phoneNum(dto.getPhoneNum()).build();

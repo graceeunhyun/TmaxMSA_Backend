@@ -6,19 +6,18 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Required;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.*;
 
 @Controller
 @RequiredArgsConstructor
+@RequestMapping(value = "/api/v0/companies/", method = {RequestMethod.GET,RequestMethod.POST})
 public class CompanyController {
     private final CompanyService companyService; // final 로 선언
 
-//    @GetMapping(value="/api/v0/employees/create")
-//    public String crea
 
-    @GetMapping(value="/api/v0/companies/create")
-    public String createCompany(CompanyDto dto) {
+    @PostMapping(value="create")
+    public String createCompany(@RequestBody  CompanyDto dto) {
         companyService.create(dto);
-        return "create";
+        return "create2";
     }
 }
