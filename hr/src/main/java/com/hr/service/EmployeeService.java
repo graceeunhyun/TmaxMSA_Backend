@@ -17,18 +17,20 @@ public class EmployeeService {
     @Autowired
     EmployeeRepository employeeRepository;
 
-    public Long create(EmployeeDto dto) {
-        Employee employee = dtoToEntity(dto);
+
+    public String create(EmployeeDto dto) {
+
+        Employee employee = this.dtoToEntity(dto);
         employeeRepository.save(employee);
         return employee.getId();
     }
 
+    // factory pattern 으로 변경
     public Employee dtoToEntity(EmployeeDto dto) {
         Account account = new Account(dto.getAccountId(), dto.getAccountNumber());
-        Company company = Company.builder().company_id(dto.getCompanyId()).build();
-        Employee employee = Employee.builder().email(dto.getEmail()).account(account).company(company).name(dto.getName()).phoneNum(dto.getPhoneNum()).build();
-
-        return employee;
+        Company company = Company.of(dto.getCompanyId(), null);
+        Employee employee = Employee.of(dto.getId(), dto.getName(), dto.getPhoneNum(), dto.getEmail(), company, account);
+        return  employee;
     }
 
     

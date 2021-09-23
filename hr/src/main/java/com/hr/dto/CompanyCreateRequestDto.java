@@ -10,7 +10,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class CompanyCreateRequestDto {
-    private Long company_id;
+    private String company_id;
     private String company_nm;
 }
 

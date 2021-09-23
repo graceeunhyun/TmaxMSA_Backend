@@ -20,7 +20,7 @@ public class CompanyService {
     }
 
     Company dtoToEntity(CompanyCreateRequestDto dto) {
-        Company company = Company.builder().company_nm(dto.getCompany_nm()).build();
+        Company company = Company.of(dto.getCompany_id(), dto.getCompany_nm());
 
         return company;
     }

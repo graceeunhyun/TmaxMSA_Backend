@@ -10,11 +10,11 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class EmployeeDto {
-    private Long id;
+    private String id;
     private String name;
     private String phoneNum;
     private String email;
     private String accountId;
     private String accountNumber;
-    private Long companyId;
+    private String companyId;
 }

@@ -14,12 +14,11 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 @Controller
 @RequiredArgsConstructor
-@RequestMapping(value = "/api/v0/companies/", method = {RequestMethod.GET,RequestMethod.POST})
 public class CompanyController {
     private final CompanyService companyService; // final 로 선언
 
 
-    @PostMapping(value="create")
+    @PostMapping(value="/api/v0/companies/create")
     public String createCompany(@RequestBody CompanyCreateRequestDto dto) {
         companyService.create(dto);
         return "create2";
