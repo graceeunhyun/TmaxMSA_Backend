@@ -29,6 +29,9 @@ subprojects {
         annotationProcessor 'org.projectlombok:lombok'
         testImplementation 'org.springframework.boot:spring-boot-starter-test'
         implementation 'org.postgresql:postgresql'
+
+        implementation 'io.springfox:springfox-boot-starter:3.0.0'
+        implementation 'io.springfox:springfox-swagger-ui:3.0.0'
     }
 }
 
@@ -50,6 +53,28 @@ dependencies {
     annotationProcessor 'org.projectlombok:lombok'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
     implementation 'org.postgresql:postgresql'
+
+    // Swagger
+    implementation "io.springfox:springfox-boot-starter:3.0.0"
+    implementation "io.springfox:springfox-swagger-ui:3.0.0"
+}
+
+project(':common') {
+    dependencies {
+
+    }
+}
+
+project(':finance') {
+    dependencies {
+        implementation project(':common')
+    }
+}
+
+project(':hr') {
+    dependencies {
+        implementation project(':common')
+    }
 }
 
 test {
