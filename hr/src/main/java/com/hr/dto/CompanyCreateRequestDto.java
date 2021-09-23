@@ -9,7 +9,7 @@ import lombok.NoArgsConstructor;
 @Builder(toBuilder = true)
 @NoArgsConstructor
 @AllArgsConstructor
-public class CompanyDto {
+public class CompanyCreateRequestDto {
     private Long company_id;
     private String company_nm;
 }
