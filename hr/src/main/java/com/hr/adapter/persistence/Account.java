@@ -1,4 +1,4 @@
-package com.hr.domain;
+package com.hr.adapter.persistence;
 
 import lombok.Getter;
 import lombok.Setter;

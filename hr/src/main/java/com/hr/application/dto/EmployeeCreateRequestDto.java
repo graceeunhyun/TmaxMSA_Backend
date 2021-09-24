@@ -1,4 +1,4 @@
-package com.hr.dto;
+package com.hr.application.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -9,7 +9,7 @@ import lombok.NoArgsConstructor;
 @Builder(toBuilder = true)
 @NoArgsConstructor
 @AllArgsConstructor
-public class EmployeeDto {
+public class EmployeeCreateRequestDto {
     private String id;
     private String name;
     private String phoneNum;

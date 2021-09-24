@@ -1,8 +1,8 @@
-package com.hr.service;
+package com.hr.application;
 
-import com.hr.domain.Company;
-import com.hr.dto.CompanyCreateRequestDto;
-import com.hr.repository.CompanyRepository;
+import com.hr.adapter.persistence.Company;
+import com.hr.application.dto.CompanyCreateRequestDto;
+import com.hr.adapter.persistence.CompanyRepository;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
