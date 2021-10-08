@@ -10,8 +10,11 @@ import org.springframework.stereotype.Service;
 @Service
 @Log4j2
 public class CompanyService {
-    @Autowired
-    CompanyRepository companyRepository;
+    private final CompanyRepository companyRepository;
+
+    public CompanyService(CompanyRepository companyRepository) {
+        this.companyRepository = companyRepository;
+    }
 
     public Long create(CompanyCreateRequestDto dto) {
         Company entity = dtoToEntity(dto);

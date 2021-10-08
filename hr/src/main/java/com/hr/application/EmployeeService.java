@@ -12,9 +12,11 @@ import org.springframework.stereotype.Service;
 @Service
 @Log4j2
 public class EmployeeService {
-    @Autowired
-    EmployeeRepository employeeRepository;
+    private final EmployeeRepository employeeRepository;
 
+    public EmployeeService(EmployeeRepository employeeRepository) {
+        this.employeeRepository = employeeRepository;
+    }
 
     public EmployeeCreateRequestDto create(EmployeeCreateRequestDto dto) {
 
